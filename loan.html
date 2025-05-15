@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanEase | Personal & Business Loans $5k-$100k</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#1E40AF',
+                        accent: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2563EB;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .input-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #2563EB;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        .input-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #2563EB;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        .testimonial-card {
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 60px;
+            color: #2563EB;
+            opacity: 0.2;
+            font-family: serif;
+        }
+    </style>
+</head>
+<body class="text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-hand-holding-usd text-primary text-xl mr-2"></i>
+                        <span class="text-lg font-bold">LoanEase</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="#home" class="nav-link text-primary inline-flex items-center px-1 text-sm font-medium">Home</a>
+                        <a href="#apply" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 text-sm font-medium">Apply Now</a>
+                        <a href="#rates" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 text-sm font-medium">Rates & Terms</a>
+                        <a href="#calculator" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 text-sm font-medium">Calculator</a>
+                        <a href="#testimonials" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 text-sm font-medium">Testimonials</a>
+                        <a href="#faq" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 focus:outline-none" id="mobile-menu-button">
+                        <span class="sr-only">Open menu</span>
+                        <i class="fas fa-bars block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-primary">Home</a>
+                <a href="#apply" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Apply Now</a>
+                <a href="#rates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Rates & Terms</a>
+                <a href="#calculator" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Calculator</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Testimonials</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl mb-6">
+                        Get the Funds You Need <br>From <span class="underline decoration-wavy">$5,000 to $100,000</span>
+                    </h1>
+                    <p class="text-lg text-gray-100 mb-8">
+                        Competitive rates, flexible terms, and a simple application process. Get approved in as little as 24 hours.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#apply" class="bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-lg font-bold text-lg transition-all shadow-lg text-center">
+                            Apply Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#calculator" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary px-6 py-3 rounded-lg font-bold text-lg transition-all text-center">
+                            Calculate Payments
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center">
+                        <div class="flex -space-x-2">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <div class="flex items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm font-medium">4.9/5 from 1,200+ reviews</span>
+                            </div>
+                            <p class="text-sm text-gray-200">Trusted by thousands of customers nationwide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-lg border border-white/20">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold">Quick Loan Estimate</h3>
+                            <div class="flex space-x-2">
+                                <span class="bg-white/20 rounded-full px-3 py-1 text-sm">No Credit Check</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-white/80">Loan Amount</span>
+                                <span class="text-sm font-bold">$<span id="loan-amount-preview">25,000</span></span>
+                            </div>
+                            <input type="range" min="5000" max="100000" step="1000" value="25000" class="w-full input-range" id="loan-amount-slider">
+                            <div class="flex justify-between text-xs text-white/60 mt-1">
+                                <span>$5,000</span>
+                                <span>$100,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-white/80">Term Length</span>
+                                <span class="text-sm font-bold"><span id="loan-term-preview">36</span> months</span>
+                            </div>
+                            <input type="range" min="12" max="60" step="6" value="36" class="w-full input-range" id="loan-term-slider">
+                            <div class="flex justify-between text-xs text-white/60 mt-1">
+                                <span>12 months</span>
+                                <span>60 months</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-white/80">Interest Rate</span>
+                                <span class="text-sm font-bold"><span id="interest-rate-preview">4.5</span>%</span>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-center text-sm">
+                                    Based on your estimated credit profile
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/20 rounded-lg p-4 mt-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Estimated Payment</span>
+                                <span class="font-bold text-lg">$<span id="monthly-payment-preview">775</span>/mo</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-white text-primary font-bold py-3 rounded-lg mt-4 hover:bg-gray-100 transition-all">
+                            Get Personalized Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-2xl font-bold text-primary">24-48 Hours</div>
+                    <div class="text-gray-500">Approval Time</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-primary">3-5%</div>
+                    <div class="text-gray-500">Monthly Interest</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-primary">$5k-$100k</div>
+                    <div class="text-gray-500">Loan Amounts</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-primary">No Prepayment</div>
+                    <div class="text-gray-500">Penalties</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Application -->
+    <section id="apply" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Simple Loan Application
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Complete our easy application in just 5 minutes
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
+                <div class="p-6">
+                    <div class="mb-8">
+                        <div class="flex items-center">
+                            <div class="flex-1 border-t-2 border-primary"></div>
+                            <div class="px-4 text-primary font-bold">Step 1 of 3</div>
+                            <div class="flex-1 border-t-2 border-gray-200"></div>
+                        </div>
+                    </div>
+                    
+                    <form>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                                <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone*</label>
+                                <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Loan Amount*</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    <option>Select amount</option>
+                                    <option>$5,000 - $10,000</option>
+                                    <option>$10,001 - $25,000</option>
+                                    <option>$25,001 - $50,000</option>
+                                    <option>$50,001 - $75,000</option>
+                                    <option>$75,001 - $100,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Loan Purpose*</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    <option>Select purpose</option>
+                                    <option>Debt Consolidation</option>
+                                    <option>Home Improvement</option>
+                                    <option>Business Investment</option>
+                                    <option>Medical Expenses</option>
+                                    <option>Education</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-600">
+                                    I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-between">
+                            <button type="button" class="bg-gray-200 text-gray-700 hover:bg-gray-300 px-6 py-2 rounded-lg font-medium transition-all">
+                                Back
+                            </button>
+                            <button type="submit" class="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-lg font-medium transition-all">
+                                Continue to Step 2
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rates & Terms -->
+    <section id="rates" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Rates & Terms
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Competitive rates tailored to your needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 transition-all card-hover">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-dollar-sign text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Loan Amounts</h3>
+                    <p class="text-gray-600 mb-4">
+                        We offer loans ranging from $5,000 to $100,000 to meet your financial needs.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Minimum:</span>
+                            <span class="font-bold">$5,000</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-1">
+                            <span class="text-sm font-medium">Maximum:</span>
+                            <span class="font-bold">$100,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 transition-all card-hover">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-percent text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Interest Rates</h3>
+                    <p class="text-gray-600 mb-4">
+                        Our rates range from 3% to 5% per month based on loan amount and term length.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Minimum:</span>
+                            <span class="font-bold">3%</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-1">
+                            <span class="text-sm font-medium">Maximum:</span>
+                            <span class="font-bold">5%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 transition-all card-hover">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Loan Terms</h3>
+                    <p class="text-gray-600 mb-4">
+                        Flexible repayment terms from 12 to 60 months to fit your budget.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Shortest:</span>
+                            <span class="font-bold">12 months</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-1">
+                            <span class="text-sm font-medium">Longest:</span>
+                            <span class="font-bold">60 months</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gray-50 rounded-xl p-8 max-w-5xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 text-center">Example Loan Scenarios</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Loan Amount</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Term</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Interest Rate</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Monthly Payment</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">$10,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap">24 months</td>
+                                <td class="px-6 py-4 whitespace-nowrap">4.5%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">$483</td>
+                                <td class="px-6 py-4 whitespace-nowrap">$1,592</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">$25,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap">36 months</td>
+                                <td class="px-6 py-4 whitespace-nowrap">4.0%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">$775</td>
+                                <td class="px-6 py-4 whitespace-nowrap">$2,900</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">$50,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap">48 months</td>
+                                <td class="px-6 py-4 whitespace-nowrap">3.5%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">$1,131</td>
+                                <td class="px-6 py-4 whitespace-nowrap">$4,288</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">*These are example scenarios. Your actual terms may vary.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator -->
+    <section id="calculator" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Loan Calculator
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Estimate your monthly payments based on loan amount and term
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
+                <div class="p-6">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Loan Amount ($)</label>
+                                <input type="range" min="5000" max="100000" step="1000" value="25000" class="w-full input-range mb-2" id="calc-loan-amount">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-500">$5,000</span>
+                                    <span class="text-sm text-gray-500">$100,000</span>
+                                </div>
+                                <div class="mt-4">
+                                    <input type="number" min="5000" max="100000" step="1000" value="25000" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" id="calc-loan-amount-input">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Loan Term (months)</label>
+                                <input type="range" min="12" max="60" step="1" value="36" class="w-full input-range mb-2" id="calc-loan-term">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-500">12</span>
+                                    <span class="text-sm text-gray-500">60</span>
+                                </div>
+                                <div class="mt-4">
+                                    <input type="number" min="12" max="60" step="1" value="36" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" id="calc-loan-term-input">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Interest Rate (%)</label>
+                                <input type="range" min="3" max="5" step="0.1" value="4.5" class="w-full input-range mb-2" id="calc-interest-rate">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-500">3%</span>
+                                    <span class="text-sm text-gray-500">5%</span>
+                                </div>
+                                <div class="mt-4">
+                                    <input type="number" min="3" max="5" step="0.1" value="4.5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" id="calc-interest-rate-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-gray-50 rounded-lg p-6 h-full">
+                                <h3 class="text-lg font-bold mb-4">Payment Summary</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Loan Amount:</span>
+                                        <span class="font-bold" id="summary-loan-amount">$25,000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Loan Term:</span>
+                                        <span class="font-bold" id="summary-loan-term">36 months</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Interest Rate:</span>
+                                        <span class="font-bold" id="summary-interest-rate">4.5%</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-200 my-4"></div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Monthly Payment:</span>
+                                        <span class="font-bold text-primary text-xl" id="summary-monthly-payment">$775</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Total Interest:</span>
+                                        <span class="font-bold" id="summary-total-interest">$2,900</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Total Cost:</span>
+                                        <span class="font-bold" id="summary-total-cost">$27,900</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 rounded-lg mt-8 transition-all">
+                                    Apply Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Customer Testimonials
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Hear from our satisfied customers
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 transition-all card-hover testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "The entire process was so simple and straightforward. I got approved for a $35,000 loan within 24 hours to expand my small business. The rates were better than I expected and the monthly payments fit perfectly in my budget."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 transition-all card-hover testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Michael T.">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Michael T.</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "I needed to consolidate some high-interest credit card debt and LoanEase came through with a great solution. The 4.2% rate saved me hundreds per month compared to what I was paying. Customer service was excellent throughout the process."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 transition-all card-hover testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/28.jpg" alt="Jennifer L.">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Jennifer L.</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "As a first-time borrower, I was nervous about the process, but the team at LoanEase made everything so easy. I got a $15,000 loan for home improvements at 3.8% interest. The online application took less than 10 minutes and funds were in my account the next day."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-lg transition-all inline-flex items-center">
+                    <i class="fas fa-comments mr-2"></i> Read More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Frequently Asked Questions
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Get answers to common questions about our loans
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" id="faq1">
+                            <span class="font-medium">What are the requirements to qualify for a loan?</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform transform"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden" id="faq1-content">
+                            <p class="text-gray-600">
+                                To qualify for a LoanEase personal loan, you must: be at least 18 years old, have a valid government-issued ID, provide proof of income (minimum $2,000/month), have an active bank account, and have a credit score of at least 600. Business loans have additional requirements including time in business and annual revenue.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" id="faq2">
+                            <span class="font-medium">How long does the application process take?</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform transform"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden" id="faq2-content">
+                            <p class="text-gray-600">
+                                Our online application takes about 5-10 minutes to complete. After submission, most applicants receive a decision within 24 hours. Once approved, funds are typically deposited into your bank account within 1-2 business days.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" id="faq3">
+                            <span class="font-medium">What is the maximum loan amount I can get?</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform transform"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden" id="faq3-content">
+                            <p class="text-gray-600">
+                                We offer personal loans from $5,000 up to $100,000. The exact amount you qualify for depends on factors like your credit score, income, debt-to-income ratio, and loan purpose. Business loans may be available for higher amounts with additional documentation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" id="faq4">
+                            <span class="font-medium">Are there any prepayment penalties?</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform transform"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden" id="faq4-content">
+                            <p class="text-gray-600">
+                                No, there are no prepayment penalties with LoanEase. You can pay off your loan early at any time without additional fees, which can save you money on interest.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" id="faq5">
+                            <span class="font-medium">How do I make payments on my loan?</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform transform"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden" id="faq5-content">
+                            <p class="text-gray-600">
+                                We offer several convenient payment options: automatic bank transfers (ACH), online payments through your LoanEase account, checks by mail, or in-person payments at our partner locations. You can also set up autopay to ensure you never miss a payment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-white rounded-xl p-8 text-center">
+                    <h3 class="text-xl font-bold mb-2">Still have questions?</h3>
+                    <p class="text-gray-600 mb-4">Our loan specialists are available to help you 7 days a week.</p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-lg transition-all inline-flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i> Call Us: (800) 555-0199
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 hover:bg-gray-300 font-bold py-2 px-6 rounded-lg transition-all inline-flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> Email Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">
+                Ready to Get Started?
+            </h2>
+            <p class="text-lg text-gray-100 max-w-3xl mx-auto mb-8">
+                Apply online in minutes and get a decision fast. No obligation, no hidden fees.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#apply" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-bold text-lg transition-all shadow-lg inline-block">
+                    Apply Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#calculator" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-bold text-lg transition-all inline-block">
+                    Calculate Payments
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">LoanEase</h3>
+                    <p class="text-gray-400">
+                        Providing simple, transparent loan solutions with competitive rates and excellent service.
+                    </p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#apply" class="text-gray-400 hover:text-white transition-colors">Apply Now</a></li>
+                        <li><a href="#rates" class="text-gray-400 hover:text-white transition-colors">Rates & Terms</a></li>
+                        <li><a href="#calculator" class="text-gray-400 hover:text-white transition-colors">Calculator</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Licenses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Disclosures</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">123 Financial Way, Suite 100<br>New York, NY 10001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-2"></i>
+                            <a href="tel:8005550199" class="text-gray-400 hover:text-white transition-colors">(800) 555-0199</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <a href="mailto:info@loanease.com" class="text-gray-400 hover:text-white transition-colors">info@loanease.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 LoanEase Financial Services. All rights reserved.</p>
+                <p class="mt-2">LoanEase is not a bank. Loans subject to credit approval. Rates and terms may vary.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ accordion
+        const faqButtons = document.querySelectorAll('[id^="faq"]:not([id$="content"])');
+        
+        faqButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const contentId = this.id + '-content';
+                const content = document.getElementById(contentId);
+                const icon = this.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Hero slider calculations
+        const loanAmountSlider = document.getElementById('loan-amount-slider');
+        const loanAmountPreview = document.getElementById('loan-amount-preview');
+        const loanTermSlider = document.getElementById('loan-term-slider');
+        const loanTermPreview = document.getElementById('loan-term-preview');
+        const interestRatePreview = document.getElementById('interest-rate-preview');
+        const monthlyPaymentPreview = document.getElementById('monthly-payment-preview');
+        
+        function formatCurrency(amount) {
+            return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        
+        function calculateMonthlyPayment(amount, term, rate) {
+            const monthlyRate = rate / 100;
+            const payment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
+            return Math.round(payment * 100) / 100;
+        }
+        
+        function updateHeroPreview() {
+            const loanAmount = parseInt(loanAmountSlider.value);
+            const loanTerm = parseInt(loanTermSlider.value);
+            
+            // Calculate dynamic interest rate based on loan amount
+            let interestRate;
+            if (loanAmount <= 10000) {
+                interestRate = 5;
+            } else if (loanAmount <= 25000) {
+                interestRate = 4.5;
+            } else if (loanAmount <= 50000) {
+                interestRate = 4;
+            } else {
+                interestRate = 3.5;
+            }
+            
+            const monthlyPayment = calculateMonthlyPayment(loanAmount, loanTerm, interestRate);
+            
+            loanAmountPreview.textContent = formatCurrency(loanAmount);
+            loanTermPreview.textContent = loanTerm;
+            interestRatePreview.textContent = interestRate;
+            monthlyPaymentPreview.textContent = formatCurrency(monthlyPayment);
+        }
+        
+        loanAmountSlider.addEventListener('input', updateHeroPreview);
+        loanTermSlider.addEventListener('input', updateHeroPreview);
+        
+        // Initialize
+        updateHeroPreview();
+        
+        // Calculator functionality
+        const calcLoanAmount = document.getElementById('calc-loan-amount');
+        const calcLoanAmountInput = document.getElementById('calc-loan-amount-input');
+        const calcLoanTerm = document.getElementById('calc-loan-term');
+        const calcLoanTermInput = document.getElementById('calc-loan-term-input');
+        const calcInterestRate = document.getElementById('calc-interest-rate');
+        const calcInterestRateInput = document.getElementById('calc-interest-rate-input');
+        
+        const summaryLoanAmount = document.getElementById('summary-loan-amount');
+        const summaryLoanTerm = document.getElementById('summary-loan-term');
+        const summaryInterestRate = document.getElementById('summary-interest-rate');
+        const summaryMonthlyPayment = document.getElementById('summary-monthly-payment');
+        const summaryTotalInterest = document.getElementById('summary-total-interest');
+        const summaryTotalCost = document.getElementById('summary-total-cost');
+        
+        function updateCalculator() {
+            const loanAmount = parseInt(calcLoanAmount.value);
+            const loanTerm = parseInt(calcLoanTerm.value);
+            const interestRate = parseFloat(calcInterestRate.value);
+            
+            const monthlyPayment = calculateMonthlyPayment(loanAmount, loanTerm, interestRate);
+            const totalInterest = Math.round((monthlyPayment * loanTerm - loanAmount) * 100) / 100;
+            const totalCost = loanAmount + totalInterest;
+            
+            // Update input fields
+            calcLoanAmountInput.value = loanAmount;
+            calcLoanTermInput.value = loanTerm;
+            calcInterestRateInput.value = interestRate;
+            
+            // Update summary
+            summaryLoanAmount.textContent = '$' + formatCurrency(loanAmount);
+            summaryLoanTerm.textContent = loanTerm + ' months';
+            summaryInterestRate.textContent = interestRate + '%';
+            summaryMonthlyPayment.textContent = '$' + formatCurrency(monthlyPayment);
+            summaryTotalInterest.textContent = '$' + formatCurrency(totalInterest);
+            summaryTotalCost.textContent = '$' + formatCurrency(totalCost);
+        }
+        
+        // Slider events
+        calcLoanAmount.addEventListener('input', updateCalculator);
+        calcLoanTerm.addEventListener('input', updateCalculator);
+        calcInterestRate.addEventListener('input', updateCalculator);
+        
+        // Input field events
+        calcLoanAmountInput.addEventListener('input', function() {
+            let value = parseInt(this.value);
+            if (isNaN(value)) value = 5000;
+            if (value < 5000) value = 5000;
+            if (value > 100000) value = 100000;
+            this.value = value;
+            calcLoanAmount.value = value;
+            updateCalculator();
+        });
+        
+        calcLoanTermInput.addEventListener('input', function() {
+            let value = parseInt(this.value);
+            if (isNaN(value)) value = 12;
+            if (value < 12) value = 12;
+            if (value > 60) value = 60;
+            this.value = value;
+            calcLoanTerm.value = value;
+            updateCalculator();
+        });
+        
+        calcInterestRateInput.addEventListener('input', function() {
+            let value = parseFloat(this.value);
+            if (isNaN(value)) value = 3;
+            if (value < 3) value = 3;
+            if (value > 5) value = 5;
+            this.value = value.toFixed(1);
+            calcInterestRate.value = value;
+            updateCalculator();
+        });
+        
+        // Initialize calculator
+        updateCalculator();
+    </script>
+</body>
+</html>
